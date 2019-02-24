@@ -1,0 +1,42 @@
+﻿@page
+@model EntAppSecond.Pages.Shared.BootStrapTestModel
+@{
+    ViewData["Title"] = "BootStrapTest";
+}
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = "_Layout";
+}
+
+
+<h2>BootStrapTest</h2>
+
+<form  class="form-group" method="post">
+
+    <Label for="Product Label">
+        Product Label Code:
+        <input class="form-control" asp-for="ProductLabel" />
+
+    </Label>
+    <label for="Red">
+        <input class="form-group-sm" value="Red" id="Red" type="radio" asp-for="Colour" />
+        Red
+    </label>
+    <label for="Yellow">
+        <input class="form-group-sm" value="Yellow" id="Yellow" type="radio" asp-for="Colour" />
+        Yellow
+    </label>
+    <label for="Black">
+        <input class="form-group-sm" value="Black" id="Black" type="radio" asp-for="Colour" />
+        Black
+    </label>
+    <br />
+    <label for="Consent">
+        I consent to everything
+        <input class="form-inline" asp-for="Consent" type="checkbox" />
+    </label>
+    <br />
+
+    <button type="submit" id="2" onclick="OnPost()">Submit</button>
+
+</form>

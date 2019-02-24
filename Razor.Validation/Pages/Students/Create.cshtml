@@ -1,0 +1,56 @@
+﻿@page
+@model EntAppSecond.Pages.Students.CreateModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Create";
+    Layout = "_Layout";
+}
+
+<h2>Create Your Student</h2>
+
+<form method="post" style="display:inline-grid">
+
+
+    <div>
+        <label asp-for="Student.FirstName"></label>
+        <input asp-for="Student.FirstName" />
+    </div>
+    <div>
+        <label asp-for="Student.LastName"></label>
+        <input asp-for="Student.LastName" />
+    </div>
+    <div>
+        <label asp-for="Student.StudentID"></label>
+        <input asp-for="Student.StudentID" />
+    </div>
+    <div>
+        <label asp-for="Student.DoB"></label>
+        <input asp-for="Student.DoB" />
+    </div>
+    <div>
+        <label asp-for="Student.ModulesTaken"></label>
+        <input asp-for="Student.ModulesTaken" />
+    </div>
+    <div>
+        <label asp-for="Student.ModulesTaken"></label>
+        <input asp-for="Student.ModulesTaken" />
+    </div>
+    <div>
+        <label asp-for=Student.Height></label>
+        <input asp-for=Student.Height>
+    </div>
+
+    <div>
+        <label asp-for=Student.Email></label>
+        <input asp-for=Student.Email>
+    </div>
+    <div>
+        <label asp-for=Student.EmailCon></label>
+        <input asp-for=Student.EmailCon>
+    </div>
+    <div asp-validation-summary="All"></div>
+    <span asp-validation-for="Student.StudentID"></span>
+    <button type="submit">Press Me</button>
+
+   
+</form>
