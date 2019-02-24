@@ -7,7 +7,7 @@ using EntAppSecond.Model;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace EntAppSecond.Pages.Students
+namespace Razor.Validation.Pages.Students
 {
     
     public class CreateModel : PageModel
