@@ -22,7 +22,13 @@ namespace EntAppSecond.Pages.Students
         }
       
      
-      
+      public void OnPost()
+        {
+            if (Student.Email!=Student.EmailCon)
+            { ModelState.AddModelError("Student EmailCon", "Your email does not match! "); }
+
+
+        }
         
     }
 }
