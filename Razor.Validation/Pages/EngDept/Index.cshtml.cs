@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace EntAppSecond.EngDept
+namespace Razor.Validation.Pages.EngDept
 {
     public class IndexModel : PageModel
     {

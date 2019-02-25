@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Mvc;
 
-namespace EntAppSecond.Model
+namespace Razor.Validation.Model
 {
     public class Student
     {

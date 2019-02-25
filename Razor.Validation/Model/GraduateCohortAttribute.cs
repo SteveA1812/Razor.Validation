@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace EntAppSecond.Model
+namespace Razor.Validation.Model
 {
     public class GraduationCohortAttribute : ValidationAttribute, IClientModelValidator
     {

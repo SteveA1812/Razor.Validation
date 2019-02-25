@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace EntAppSecond.Pages.Shared
+namespace Razor.Validation.Pages.Shared
 {
     public class BootStrapTest2Model : PageModel
     {

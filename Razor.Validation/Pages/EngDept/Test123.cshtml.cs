@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace EntAppSecond.Pages.EngDept
+namespace Razor.Validation.Pages.EngDept
 {
     public class Test123Model : PageModel
     {
