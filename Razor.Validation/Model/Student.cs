@@ -19,13 +19,13 @@ namespace Razor.Validation.Model
         public string StudentID { get; set; } = "";
 
         [Display(Name = "First Name")]
-        [StringLength(2)]
+        [StringLength(10)]
         [Required(ErrorMessage = "You must enter at least 2 characters")]
         public string FirstName{ get; set; } = "";
 
 
         [Display(Name = "Last Name")]
-        [StringLength(3)]
+        [StringLength(15)]
         [Required(ErrorMessage ="You must enter at least 3 characters")]
         public string LastName { get; set; } = "";
 
