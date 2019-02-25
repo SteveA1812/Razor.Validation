@@ -6,32 +6,49 @@ using System.Threading.Tasks;
 using Razor.Validation.Model;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Http;
 
 namespace Razor.Validation.Pages.Students
 {
-    
-    public class CreateModel : PageModel
-    {
-        [BindProperty]
-        public Student Student { get; set; }
 
-       
-        public void OnGet()
+   
+
+        public class CreateStudentModel : PageModel
         {
+            private readonly CollegeContext _db;
 
+            public CreateStudentModel(CollegeContext db)
+            {
+                _db = db;
+            }
+
+            [BindProperty]
+
+            public Student Student { get; set; } = new Student();
+            public void OnGet()
+            {
+
+
+                Student.StudentID = HttpContext.Session.GetString("StudentID");
+                Student.FirstName = HttpContext.Session.GetString("FirstName");
+                Student.LastName = HttpContext.Session.GetString("LastName");
+
+
+            }
+
+
+            public async Task<IActionResult> OnPostAsync()
+            {
+                if (ModelState.IsValid)
+                {
+                    _db.Students.Add(Student);
+                    await _db.SaveChangesAsync();
+                    return RedirectToPage("ListStudents");
+                }
+                else
+                {
+                    return Page();
+                }
+            }
         }
-      
-     
-      public void OnPost()
-        {
-            if (Student.Email!=Student.EmailCon)
-            { ModelState.AddModelError("Student EmailCon", "Your email does not match! "); }
-
-
-        }
-        
     }
-}
-
-     
-    

@@ -8,7 +8,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
-
+using Razor.Validation.Model;
+using Microsoft.EntityFrameworkCore;
 
 namespace Razor.Validation
 {
@@ -33,6 +34,7 @@ namespace Razor.Validation
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddDbContext<CollegeContext>(options => options.UseInMemoryDatabase("mytempdb"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
