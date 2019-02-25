@@ -9,48 +9,53 @@
 <h2>Create Your Student</h2>
 
 <form method="post" style="display:inline-grid">
-
+    <div asp-validation-summary="All"></div>
 
     <div>
         <label asp-for="Student.FirstName"></label>
         <input asp-for="Student.FirstName" />
+        <span asp-validation-for="Student.FirstName"></span>
     </div>
     <div>
         <label asp-for="Student.LastName"></label>
         <input asp-for="Student.LastName" />
+        <span asp-validation-for="Student.LastName"></span>
     </div>
     <div>
         <label asp-for="Student.StudentID"></label>
         <input asp-for="Student.StudentID" />
+        <span asp-validation-for="Student.StudentID"></span>
     </div>
     <div>
         <label asp-for="Student.DoB"></label>
         <input asp-for="Student.DoB" />
+        <span asp-validation-for="Student.DoB"></span>
     </div>
     <div>
         <label asp-for="Student.ModulesTaken"></label>
         <input asp-for="Student.ModulesTaken" />
+        <span asp-validation-for="Student.DoB"></span>
     </div>
-    <div>
-        <label asp-for="Student.ModulesTaken"></label>
-        <input asp-for="Student.ModulesTaken" />
-    </div>
+    
     <div>
         <label asp-for=Student.Height></label>
         <input asp-for=Student.Height>
+        <span asp-validation-for="Student.Height"></span>
     </div>
 
     <div>
         <label asp-for=Student.Email></label>
         <input asp-for=Student.Email>
+        <span asp-validation-for="Student.Email"></span>
     </div>
     <div>
         <label asp-for=Student.EmailCon></label>
         <input asp-for=Student.EmailCon>
+        <span asp-validation-for="Student.EmailCon"></span>
     </div>
-    <div asp-validation-summary="All"></div>
-    <span asp-validation-for="Student.StudentID"></span>
+   
+    
     <button type="submit">Press Me</button>
 
-   
+
 </form>
