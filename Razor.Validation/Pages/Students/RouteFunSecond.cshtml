@@ -1,0 +1,24 @@
+﻿@page "{message?}"
+@model Razor.Validation.Pages.Students.RouteFunSecondModel
+@{
+    ViewData["Title"] = "RouteFunSecond";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+@if (@RouteData.Values["message"] == null)
+{
+    <p> No route</p>
+}
+else
+{
+    @RouteData.Values["message"]
+}
+
+
+<h2> Second way of doing it</h2>
+
+@*@Model.Mess*@
+
+<h2> Third way of doing it</h2>
+
+@Model.Message;

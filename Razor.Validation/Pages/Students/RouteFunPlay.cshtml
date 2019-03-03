@@ -1,0 +1,14 @@
+﻿@page
+@model Razor.Validation.Pages.Students.RouteFunPlayModel
+@{
+    ViewData["Title"] = "RouteFunPlay";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h2>RouteFunPlay</h2>
+
+
+<a href="RouteFunSecond/hello">Go to Route Fun Second</a>
+
+
+<a asp-page="/RouteFunSecond" asp-route-message="hello">Go to Route Fun Second</a>
