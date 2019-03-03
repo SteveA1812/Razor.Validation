@@ -9,23 +9,23 @@ using Razor.Validation.Model;
 
 namespace Razor.Validation.Pages.Students
 {
-    public class ListStudentsModel : PageModel
-    {
-        public void OnGet()
-
-        { }
-        private readonly CollegeContext _db;
-
-        public ListStudentsModel(CollegeContext db)
+    
+        public class ListStudentsModel : PageModel
         {
-            _db = db;
-        }
 
-        public IList<Student> Students { get; private set; }
+            private readonly CollegeContext _db;
 
-        public async Task OnGetAsync()
-        {
-            Students = await _db.Students.AsNoTracking().ToListAsync();
+            public ListStudentsModel(CollegeContext db)
+            {
+                _db = db;
+            }
+
+            public IList<Student> Students { get; private set; }
+
+            public async Task OnGetAsync()
+            {
+                Students = await _db.Students.AsNoTracking().ToListAsync();
+            }
         }
     }
-}
+

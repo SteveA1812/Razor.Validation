@@ -15,40 +15,40 @@ namespace Razor.Validation.Pages.Students
 
         public class CreateStudentModel : PageModel
         {
-            private readonly CollegeContext _db;
+        private readonly CollegeContext _db;
 
-            public CreateStudentModel(CollegeContext db)
+        public CreateStudentModel(CollegeContext db)
+        {
+            _db = db;
+        }
+
+        [BindProperty]
+
+        public Student Student { get; set; } = new Student();
+        public void OnGet()
+        {
+
+
+            Student.StudentID = HttpContext.Session.GetString("StudentID");
+            Student.FirstName = HttpContext.Session.GetString("FirstName");
+            Student.LastName = HttpContext.Session.GetString("LastName");
+
+
+        }
+
+
+        public async Task<IActionResult> OnPostAsync()
+        {
+            if (ModelState.IsValid)
             {
-                _db = db;
+                _db.Students.Add(Student);
+                await _db.SaveChangesAsync();
+                return RedirectToPage("ListStudents");
             }
-
-            [BindProperty]
-
-            public Student Student { get; set; } = new Student();
-            public void OnGet()
+            else
             {
-
-
-                Student.StudentID = HttpContext.Session.GetString("StudentID");
-                Student.FirstName = HttpContext.Session.GetString("FirstName");
-                Student.LastName = HttpContext.Session.GetString("LastName");
-
-
-            }
-
-
-            public async Task<IActionResult> OnPostAsync()
-            {
-                if (ModelState.IsValid)
-                {
-                    _db.Students.Add(Student);
-                    await _db.SaveChangesAsync();
-                    return RedirectToPage("ListStudents");
-                }
-                else
-                {
-                    return Page();
-                }
+                return Page();
             }
         }
     }
+}

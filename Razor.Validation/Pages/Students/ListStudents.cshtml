@@ -4,15 +4,13 @@
     ViewData["Title"] = "ListStudents";
     Layout = "~/Pages/Shared/_Layout.cshtml";
 }
-
-<h2>ListStudents</h2>
-
 <table class="table">
     <thead>
         <tr>
             <th>ID</th>
             <th>First Name</th>
             <th>Last Name</th>
+            <th>Action</th>
         </tr>
     </thead>
     <tbody>
@@ -23,6 +21,9 @@
                 <td>@student.StudentID</td>
                 <td>@student.FirstName</td>
                 <td>@student.LastName</td>
+
+
+                <td> <a asp-page="StudentDetails" asp-route-id="@student.StudentID">Details</a> </td>
             </tr>
         }
     </tbody>
